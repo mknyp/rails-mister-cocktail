@@ -1,0 +1,9 @@
+<div class="container">
+<h1>Add a review for <%= @cocktail.name %></h1>
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :description %>
+  <%= f.input :ingredient %>
+  <%= f.submit %>
+<% end %>
+
+</div>
