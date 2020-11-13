@@ -5,6 +5,7 @@
     <strong>Ingredients:</strong>
   </p>
     <% @cocktail.doses.each do |dose| %>
+    <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
     <p><%= dose.description %> <%= dose.ingredient.name %><%= link_to "🗑", cocktail_path(@cocktail.id), method: :delete, data: {confirm: 'Are you sure?'} %></p>
     <hr>
     <% end %>

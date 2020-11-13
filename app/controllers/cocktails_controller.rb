@@ -43,7 +43,7 @@ class CocktailsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   def find_cocktail # to be used in combination with the before_action from the top
