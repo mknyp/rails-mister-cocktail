@@ -1,4 +1,8 @@
-<h1>New Cocktail</h1>
+<div class="container">
+<h1>Please enter the name of a new cocktail</h1>
 <%= render 'form' %>
 
-<%= link_to 'Back to overview', cocktails_path(@cocktails)  %>
+<div>
+<%= link_to 'Back', cocktails_path, class: 'btn btn-primary'  %>
+</div>
+</div>

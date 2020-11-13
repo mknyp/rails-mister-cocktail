@@ -1,8 +1,12 @@
 <div class="container">
-
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
-
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs">
+    <%= f.input :name %>
+    </div>
+    <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success" %>
+    </div>
+  <% end %>
 </div>

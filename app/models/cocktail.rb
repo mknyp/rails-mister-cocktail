@@ -1,5 +1,6 @@
 class Cocktail < ApplicationRecord
-  has_many :doses, dependent: :destroy
-  has_many :ingredients, through: :doses # through doses which is why this comes 2nd
-  validates :name, uniqueness: true, presence: true
+  has_many :doses, dependent: :destroy # delete child doses once deleted
+  has_many :ingredients, through: :doses # through doses which is why this comes after doses
+  validates :name, uniqueness: true, presence: true, allow_blank: false
 end
+
